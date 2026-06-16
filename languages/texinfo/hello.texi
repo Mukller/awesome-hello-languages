@@ -1,0 +1,4 @@
+\input texinfo
+@settitle Hello
+Hello, World!
+@bye

@@ -1,0 +1,6 @@
+# Keep every greeting program with LF endings so it runs exactly as written.
+* text=auto eol=lf
+
+# Whitespace source is made of significant spaces/tabs/newlines — never let
+# Git normalize it, or the program breaks.
+languages/whitespace/hello.ws binary

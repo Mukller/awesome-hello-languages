@@ -1,0 +1,3 @@
+VERSION 0.7
+hello:
+    RUN echo "Hello, World!"

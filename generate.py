@@ -445,6 +445,116 @@ PROGRAMS["Ook!"] = (
     " ".join(_BF_TO_OOK[c] for c in _bf_source if c in _BF_TO_OOK) + "\n",
 )
 
+# ---------------------------------------------------------------------------
+# Fourth wave: still more languages and formats.
+# ---------------------------------------------------------------------------
+EXTRA3_PROGRAMS: dict[str, tuple[str, str]] = {
+    # --- Object / prototype ---
+    "Self": ("self/hello.self", "'Hello, World!' printLine.\n"),
+    # --- Newer / niche general-purpose ---
+    "ChaiScript": ("chaiscript/hello.chai", 'print("Hello, World!")\n'),
+    "Gravity": ("gravity/hello.gravity",
+        'func main() {\n    System.print("Hello, World!")\n}\n'),
+    "Terra": ("terra/hello.t", 'print("Hello, World!")\n'),
+    "MoonScript": ("moonscript/hello.moon", 'print "Hello, World!"\n'),
+    "Jakt": ("jakt/hello.jakt", 'fn main() {\n    println("Hello, World!")\n}\n'),
+    "Hylo": ("hylo/hello.hylo", 'public fun main() {\n  print("Hello, World!")\n}\n'),
+    "Vale": ("vale/hello.vale",
+        'exported func main() {\n  println("Hello, World!");\n}\n'),
+    "Cyber": ("cyber/hello.cy", 'print "Hello, World!"\n'),
+    # --- Legacy / business ---
+    "Fortran 77": ("fortran77/hello.f",
+        "      PROGRAM HELLO\n      PRINT *, 'Hello, World!'\n      END\n"),
+    "Modula-3": ("modula3/Hello.m3",
+        'MODULE Hello EXPORTS Main;\nIMPORT IO;\nBEGIN\n  IO.Put("Hello, World!\\n");\nEND Hello.\n'),
+    "Delphi": ("delphi/hello.dpr",
+        "program Hello;\nbegin\n  WriteLn('Hello, World!');\nend.\n"),
+    "RPG": ("rpg/hello.rpgle", "**free\ndsply 'Hello, World!';\nreturn;\n"),
+    "OpenEdge ABL": ("abl/hello.p", 'DISPLAY "Hello, World!".\n'),
+    "FoxPro": ("foxpro/hello.prg", '? "Hello, World!"\n'),
+    "IDL": ("idl/hello.pro", "print, 'Hello, World!'\n"),
+    "Yorick": ("yorick/hello.i", 'write, "Hello, World!"\n'),
+    "CLIST": ("clist/hello.clist", 'WRITE Hello, World!\n'),
+    # --- Retro assembly ---
+    "x86 (DOS)": ("x86-dos/hello.asm",
+        'org 100h\n    mov ah, 9\n    mov dx, msg\n    int 21h\n    ret\nmsg db "Hello, World!$"\n'),
+    "Z80 (CP/M)": ("z80-cpm/hello.asm",
+        '    org 100h\n    ld de, msg\n    ld c, 9\n    call 5\n    ret\nmsg: db "Hello, World!$"\n'),
+    # --- Query languages ---
+    "SPARQL": ("sparql/hello.rq",
+        'SELECT ("Hello, World!" AS ?greeting) WHERE {}\n'),
+    "Cypher": ("cypher/hello.cypher", 'RETURN "Hello, World!" AS greeting\n'),
+    "XQuery": ("xquery/hello.xq", '"Hello, World!"\n'),
+    "XSLT": ("xslt/hello.xsl",
+        '<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">\n  <xsl:template match="/">Hello, World!</xsl:template>\n</xsl:stylesheet>\n'),
+    "jq": ("jq/hello.jq", '"Hello, World!"\n'),
+    # --- Infrastructure ---
+    "Puppet": ("puppet/hello.pp", "notify { 'Hello, World!': }\n"),
+    "Bicep": ("bicep/hello.bicep", "output greeting string = 'Hello, World!'\n"),
+    "Chef (Infra)": ("chef-infra/hello.rb", 'log "Hello, World!"\n'),
+}
+
+EXTRA3_MARKUP: dict[str, tuple[str, str]] = {
+    # --- Stylesheets ---
+    "SCSS": ("scss/hello.scss", 'body::before { content: "Hello, World!"; }\n'),
+    "Less": ("less/hello.less", 'body::before { content: "Hello, World!"; }\n'),
+    "Stylus": ("stylus/hello.styl", 'body::before\n  content "Hello, World!"\n'),
+    # --- Document markup ---
+    "Typst": ("typst/hello.typ", 'Hello, World!\n'),
+    "Djot": ("djot/hello.dj", 'Hello, World!\n'),
+    "Gemtext": ("gemtext/hello.gmi", '# Hello, World!\n'),
+    "Troff": ("troff/hello.tr", '.PP\nHello, World!\n'),
+    "Texinfo": ("texinfo/hello.texi",
+        '\\input texinfo\n@settitle Hello\nHello, World!\n@bye\n'),
+    "MDX": ("mdx/hello.mdx", '# Hello, World!\n'),
+    "Textile": ("textile/hello.textile", 'h1. Hello, World!\n'),
+    "MediaWiki": ("mediawiki/hello.wiki", "= Hello, World! =\n"),
+    "POD": ("pod/hello.pod", '=pod\n\nHello, World!\n\n=cut\n'),
+    "DocBook": ("docbook/hello.dbk",
+        '<?xml version="1.0"?>\n<article><para>Hello, World!</para></article>\n'),
+    # --- Data / interchange ---
+    "vCard": ("vcard/hello.vcf",
+        'BEGIN:VCARD\nVERSION:3.0\nFN:Hello, World!\nEND:VCARD\n'),
+    "iCalendar": ("icalendar/hello.ics",
+        'BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Hello, World!\nEND:VEVENT\nEND:VCALENDAR\n'),
+    "TSV": ("tsv/hello.tsv", 'greeting\tvalue\nmessage\tHello, World!\n'),
+    "dotenv": ("dotenv/hello.env", 'GREETING="Hello, World!"\n'),
+    "Pkl": ("pkl/hello.pkl", 'greeting = "Hello, World!"\n'),
+    # --- Infra config ---
+    "Ansible": ("ansible/hello.yml",
+        '- hosts: localhost\n  tasks:\n    - debug:\n        msg: "Hello, World!"\n'),
+    "Earthfile": ("earthfile/Earthfile",
+        'VERSION 0.7\nhello:\n    RUN echo "Hello, World!"\n'),
+}
+
+PROGRAMS.update(EXTRA3_PROGRAMS)
+MARKUP.update(EXTRA3_MARKUP)
+
+# Spoon and Whitespace are derived programmatically so they are byte-correct.
+# Spoon is a 1:1 binary re-encoding of Brainfuck.
+_BF_TO_SPOON = {
+    "+": "1", "-": "000", ">": "010", "<": "011",
+    "[": "00100", "]": "0011", ".": "001010", ",": "0010110",
+}
+PROGRAMS["Spoon"] = (
+    "spoon/hello.sp",
+    "".join(_BF_TO_SPOON[c] for c in _bf_source if c in _BF_TO_SPOON) + "\n",
+)
+
+
+def _whitespace(text: str) -> str:
+    """Emit a Whitespace program that prints ``text`` (space=0, tab=1, LF=cmd)."""
+    out: list[str] = []
+    for ch in text:
+        bits = "".join("\t" if b == "1" else " " for b in bin(ord(ch))[2:])
+        out.append("  " + " " + bits + "\n")  # IMP=SS push, positive sign, bits, LF
+        out.append("\t\n  ")                   # IMP=TL, SS = output character
+    out.append("\n\n\n")                       # end program
+    return "".join(out)
+
+
+PROGRAMS["Whitespace"] = ("whitespace/hello.ws", _whitespace("Hello, World!\n"))
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}
