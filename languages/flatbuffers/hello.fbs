@@ -1,0 +1,5 @@
+table Greeting {
+  text:string;
+}
+
+root_type Greeting;

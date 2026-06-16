@@ -1,0 +1,4 @@
+rule echo
+  command = echo "Hello, World!"
+
+build hello: echo

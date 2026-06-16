@@ -336,6 +336,115 @@ EXTRA_MARKUP: dict[str, tuple[str, str]] = {
 PROGRAMS.update(EXTRA_PROGRAMS)
 MARKUP.update(EXTRA_MARKUP)
 
+# ---------------------------------------------------------------------------
+# Third wave: more languages — functional/logic, blockchain, assembly/IR,
+# UI DSLs, shaders, and esoteric.
+# ---------------------------------------------------------------------------
+EXTRA2_PROGRAMS: dict[str, tuple[str, str]] = {
+    "Factor": ("factor/hello.factor", 'USING: io ;\n"Hello, World!" print\n'),
+    "Joy": ("joy/hello.joy", '"Hello, World!" putchars.\n'),
+    "Curry": ("curry/hello.curry", 'main = putStrLn "Hello, World!"\n'),
+    "Clean": ("clean/hello.icl",
+        'module hello\n\nStart :: String\nStart = "Hello, World!"\n'),
+    "Oz": ("oz/hello.oz",
+        'functor\nimport System\ndefine\n  {System.showInfo "Hello, World!"}\nend\n'),
+    "ATS": ("ats/hello.dats", 'implement main0 () = print "Hello, World!\\n"\n'),
+    "LFE": ("lfe/hello.lfe", '(io:format "Hello, World!~n")\n'),
+    "Datalog": ("datalog/hello.dl", 'greeting("Hello, World!").\n'),
+    "Nit": ("nit/hello.nit", 'print "Hello, World!"\n'),
+    "Felix": ("felix/hello.flx", 'println "Hello, World!";\n'),
+    "Onyx": ("onyx/hello.onyx",
+        'use core {println}\n\nmain :: () {\n    println("Hello, World!");\n}\n'),
+    "Beef": ("beef/hello.bf",
+        'namespace Hello;\n\nclass Program {\n    public static void Main() {\n        System.Console.WriteLine("Hello, World!");\n    }\n}\n'),
+    "Nial": ("nial/hello.ndf", 'write "Hello, World!"\n'),
+    "PARI/GP": ("pari/hello.gp", 'print("Hello, World!")\n'),
+    "SPSS": ("spss/hello.sps", 'ECHO "Hello, World!".\n'),
+    "AppleScript": ("applescript/hello.applescript", 'log "Hello, World!"\n'),
+    "Luau": ("luau/hello.luau", 'print("Hello, World!")\n'),
+    # --- Blockchain / smart contracts ---
+    "Vyper": ("vyper/hello.vy",
+        '@external\n@view\ndef greet() -> String[16]:\n    return "Hello, World!"\n'),
+    "Move": ("move/hello.move",
+        'module hello::greeting {\n    use std::debug;\n    public fun say() {\n        debug::print(&b"Hello, World!");\n    }\n}\n'),
+    "Clarity": ("clarity/hello.clar", '(print "Hello, World!")\n'),
+    # --- UI DSLs ---
+    "QML": ("qml/hello.qml",
+        'import QtQuick 2.0\n\nText {\n    text: "Hello, World!"\n}\n'),
+    "Slint": ("slint/hello.slint",
+        'export component Hello {\n    Text { text: "Hello, World!"; }\n}\n'),
+    # --- Assembly variants & IR ---
+    "ARM Assembly": ("arm-asm/hello.s",
+        '.data\nmsg: .ascii "Hello, World!\\n"\n.text\n.global _start\n_start:\n    mov r7, #4\n    mov r0, #1\n    ldr r1, =msg\n    mov r2, #14\n    swi 0\n    mov r7, #1\n    swi 0\n'),
+    "MIPS Assembly": ("mips-asm/hello.s",
+        '.data\nmsg: .asciiz "Hello, World!\\n"\n.text\nmain:\n    li $v0, 4\n    la $a0, msg\n    syscall\n    li $v0, 10\n    syscall\n'),
+    "RISC-V Assembly": ("riscv-asm/hello.s",
+        '.section .data\nmsg: .ascii "Hello, World!\\n"\n.section .text\n.globl _start\n_start:\n    li a7, 64\n    li a0, 1\n    la a1, msg\n    li a2, 14\n    ecall\n    li a7, 93\n    li a0, 0\n    ecall\n'),
+    "LLVM IR": ("llvm-ir/hello.ll",
+        '@.str = private constant [15 x i8] c"Hello, World!\\0A\\00"\n\ndeclare i32 @puts(i8*)\n\ndefine i32 @main() {\n  %s = getelementptr [15 x i8], [15 x i8]* @.str, i64 0, i64 0\n  call i32 @puts(i8* %s)\n  ret i32 0\n}\n'),
+    # --- Shaders (greeting in source; output is a color) ---
+    "GLSL": ("glsl/hello.frag",
+        '#version 330 core\nout vec4 fragColor;\n// Hello, World!\nvoid main() {\n    fragColor = vec4(0.0, 1.0, 0.0, 1.0);\n}\n'),
+    "HLSL": ("hlsl/hello.hlsl",
+        '// Hello, World!\nfloat4 main() : SV_Target {\n    return float4(0.0, 1.0, 0.0, 1.0);\n}\n'),
+    "WGSL": ("wgsl/hello.wgsl",
+        '// Hello, World!\n@fragment\nfn main() -> @location(0) vec4<f32> {\n    return vec4<f32>(0.0, 1.0, 0.0, 1.0);\n}\n'),
+    "Metal": ("metal/hello.metal",
+        '#include <metal_stdlib>\nusing namespace metal;\n// Hello, World!\nfragment float4 hello() {\n    return float4(0.0, 1.0, 0.0, 1.0);\n}\n'),
+    "POV-Ray": ("povray/hello.pov", '#debug "Hello, World!\\n"\n'),
+}
+
+EXTRA2_MARKUP: dict[str, tuple[str, str]] = {
+    # --- Templating engines ---
+    "Jinja2": ("jinja/hello.j2", '{{ "Hello, World!" }}\n'),
+    "Handlebars": ("handlebars/hello.hbs", 'Hello, World!\n'),
+    "Mustache": ("mustache/hello.mustache", 'Hello, World!\n'),
+    "ERB": ("erb/hello.erb", '<%= "Hello, World!" %>\n'),
+    "EJS": ("ejs/hello.ejs", '<%= "Hello, World!" %>\n'),
+    "Pug": ("pug/hello.pug", 'p Hello, World!\n'),
+    "Haml": ("haml/hello.haml", '%p Hello, World!\n'),
+    "Slim": ("slim/hello.slim", 'p Hello, World!\n'),
+    "Liquid": ("liquid/hello.liquid", '{{ "Hello, World!" }}\n'),
+    "Twig": ("twig/hello.twig", '{{ "Hello, World!" }}\n'),
+    # --- Schema / data ---
+    "Cap'n Proto": ("capnproto/hello.capnp",
+        '@0x934efea7f017fff0;\n\nstruct Greeting {\n  text @0 :Text;\n}\n'),
+    "FlatBuffers": ("flatbuffers/hello.fbs",
+        'table Greeting {\n  text:string;\n}\n\nroot_type Greeting;\n'),
+    "Avro": ("avro/hello.avsc",
+        '{\n  "type": "record",\n  "name": "Greeting",\n  "fields": [{"name": "text", "type": "string"}]\n}\n'),
+    "KDL": ("kdl/hello.kdl", 'greeting "Hello, World!"\n'),
+    "RON": ("ron/hello.ron", 'Greeting(\n    text: "Hello, World!",\n)\n'),
+    "XAML": ("xaml/hello.xaml",
+        '<TextBlock xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"\n           Text="Hello, World!" />\n'),
+    "BibTeX": ("bibtex/hello.bib", '@misc{hello, title = {Hello, World!}}\n'),
+    "Graphviz DOT": ("dot/hello.dot", 'digraph G {\n    "Hello, World!";\n}\n'),
+    "PlantUML": ("plantuml/hello.puml",
+        '@startuml\nAlice -> Bob : Hello, World!\n@enduml\n'),
+    "Mermaid": ("mermaid/hello.mmd", 'graph TD\n    A[Hello, World!]\n'),
+    "GitHub Actions": ("githubactions/hello.yml",
+        'name: hello\non: push\njobs:\n  hello:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo "Hello, World!"\n'),
+    "Ninja": ("ninja/build.ninja",
+        'rule echo\n  command = echo "Hello, World!"\n\nbuild hello: echo\n'),
+    "Gradle": ("gradle/build.gradle",
+        'task hello {\n    doLast {\n        println "Hello, World!"\n    }\n}\n'),
+}
+
+PROGRAMS.update(EXTRA2_PROGRAMS)
+MARKUP.update(EXTRA2_MARKUP)
+
+# Ook! is a 1:1 transliteration of Brainfuck — derive it from the BF program
+# so it is guaranteed correct rather than hand-typed.
+_BF_TO_OOK = {
+    ">": "Ook. Ook?", "<": "Ook? Ook.", "+": "Ook. Ook.", "-": "Ook! Ook!",
+    ".": "Ook! Ook.", ",": "Ook. Ook!", "[": "Ook! Ook?", "]": "Ook? Ook!",
+}
+_bf_source = PROGRAMS["Brainfuck"][1]
+PROGRAMS["Ook!"] = (
+    "ook/hello.ook",
+    " ".join(_BF_TO_OOK[c] for c in _bf_source if c in _BF_TO_OOK) + "\n",
+)
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}

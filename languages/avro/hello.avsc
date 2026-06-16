@@ -1,0 +1,5 @@
+{
+  "type": "record",
+  "name": "Greeting",
+  "fields": [{"name": "text", "type": "string"}]
+}
