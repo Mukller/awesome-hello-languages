@@ -665,6 +665,100 @@ PROGRAMS["Alphuck"] = (
     "".join(_BF_TO_ALPHUCK[c] for c in _bf_source if c in _BF_TO_ALPHUCK) + "\n",
 )
 
+# ---------------------------------------------------------------------------
+# Sixth wave: more real languages & dialects (engine scripting, scientific
+# CAS, retro BASICs, niche general-purpose) and a few data schemas.
+# ---------------------------------------------------------------------------
+EXTRA5_PROGRAMS: dict[str, tuple[str, str]] = {
+    # --- Systems / general-purpose ---
+    "Nelua": ("nelua/hello.nelua", 'print("Hello, World!")\n'),
+    "HolyC": ("holyc/hello.hc", '"Hello, World!\\n";\n'),
+    "Falcon": ("falcon/hello.fal", '> "Hello, World!"\n'),
+    "ICI": ("ici/hello.ici", 'printf("Hello, World!\\n");\n'),
+    "Neko": ("neko/hello.neko", '$print("Hello, World!\\n");\n'),
+    "B": ("b-lang/hello.b", 'main() {\n  putstr("Hello, World!*n");\n}\n'),
+    "SETL": ("setl/hello.setl", 'print("Hello, World!");\n'),
+    "ABC": ("abc/hello.abc", 'WRITE "Hello, World!"\n'),
+    "Lobster": ("lobster/hello.lobster", 'print("Hello, World!")\n'),
+    "E": ("e-lang/hello.e", 'println("Hello, World!")\n'),
+    "Coconut": ("coconut/hello.coco", 'print("Hello, World!")\n'),
+    "Gosu": ("gosu/hello.gsp", 'print("Hello, World!")\n'),
+    "Pyret": ("pyret/hello.arr", 'print("Hello, World!")\n'),
+    "Effekt": ("effekt/hello.effekt", 'def main() = println("Hello, World!")\n'),
+    "Flix": ("flix/hello.flix",
+        'def main(): Unit \\ IO = println("Hello, World!")\n'),
+    # --- Lisps / functional ---
+    "Arc": ("arc/hello.arc", '(prn "Hello, World!")\n'),
+    "Shen": ("shen/hello.shen", '(output "Hello, World!")\n'),
+    "AutoLISP": ("autolisp/hello.lsp", '(princ "Hello, World!")\n'),
+    # --- Scientific / CAS / array ---
+    "Klong": ("klong/hello.kg", '.p("Hello, World!")\n'),
+    "Sage": ("sage/hello.sage", 'print("Hello, World!")\n'),
+    "Macaulay2": ("macaulay2/hello.m2", 'print "Hello, World!"\n'),
+    "Reduce": ("reduce/hello.red", 'write "Hello, World!";\n'),
+    "Yacas": ("yacas/hello.ys", 'Echo("Hello, World!");\n'),
+    "Gretl": ("gretl/hello.inp", 'print "Hello, World!"\n'),
+    # --- DSP / DCC scripting ---
+    "MaxScript": ("maxscript/hello.ms", 'print "Hello, World!"\n'),
+    "MEL": ("mel/hello.mel", 'print "Hello, World!\\n";\n'),
+    "Csound": ("csound/hello.csd",
+        '<CsoundSynthesizer>\n<CsInstruments>\ninstr 1\n  prints "Hello, World!"\nendin\n</CsInstruments>\n<CsScore>\ni 1 0 0\n</CsScore>\n</CsoundSynthesizer>\n'),
+    # --- Game / engine scripting ---
+    "NWScript": ("nwscript/hello.nss",
+        'void main() {\n    PrintString("Hello, World!");\n}\n'),
+    "Verse": ("verse/hello.verse",
+        'hello := class:\n    Run() : void =\n        Print("Hello, World!")\n'),
+    "PineScript": ("pinescript/hello.pine",
+        '//@version=5\nindicator("Hello")\nlabel.new(bar_index, 0, "Hello, World!")\n'),
+    # --- Hardware ---
+    "Bluespec": ("bluespec/Hello.bsv",
+        'package Hello;\n  (* synthesize *)\n  module mkHello(Empty);\n    rule r;\n      $display("Hello, World!");\n      $finish;\n    endrule\n  endmodule\nendpackage\n'),
+    "Cg": ("cg/hello.cg",
+        '// Hello, World!\nfloat4 main() : COLOR {\n    return float4(0, 1, 0, 1);\n}\n'),
+    "ShaderLab": ("shaderlab/hello.shader",
+        'Shader "Hello/World" {\n    // Hello, World!\n    SubShader { Pass {} }\n}\n'),
+    # --- Blockchain ---
+    "Cairo": ("cairo/hello.cairo",
+        "use debug::PrintTrait;\n\nfn main() {\n    'Hello, World!'.print();\n}\n"),
+    "Ride": ("ride/hello.ride",
+        '# Hello, World!\nlet greeting = "Hello, World!"\n'),
+    # --- Mainframe / legacy ---
+    "MUMPS": ("mumps/hello.mumps", 'WRITE "Hello, World!",!\n'),
+    "NetRexx": ("netrexx/hello.nrx", 'say "Hello, World!"\n'),
+    # --- Retro BASIC family ---
+    "Visual Basic 6": ("vb6/hello.bas",
+        'Sub Main()\n    MsgBox "Hello, World!"\nEnd Sub\n'),
+    "Yabasic": ("yabasic/hello.yab", 'print "Hello, World!"\n'),
+    "Liberty BASIC": ("libertybasic/hello.bas", 'print "Hello, World!"\n'),
+    "True BASIC": ("truebasic/hello.tru", 'PRINT "Hello, World!"\nEND\n'),
+    # --- Shell ---
+    "Dash": ("dash/hello.sh", '#!/bin/dash\necho "Hello, World!"\n'),
+    # --- Esoteric (trivially correct by hand) ---
+    "FALSE": ("false/hello.false", '"Hello, World!"\n'),
+}
+
+EXTRA5_MARKUP: dict[str, tuple[str, str]] = {
+    "MXML": ("mxml/hello.mxml",
+        '<?xml version="1.0"?>\n<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">\n  <mx:Label text="Hello, World!"/>\n</mx:Application>\n'),
+    "Thymeleaf": ("thymeleaf/hello.html",
+        '<p th:text="\'Hello, World!\'">placeholder</p>\n'),
+    "Hjson": ("hjson/hello.hjson", 'greeting: Hello, World!\n'),
+    "CSON": ("cson/hello.cson", "greeting: 'Hello, World!'\n"),
+    "WIT": ("wit/hello.wit",
+        'interface greeting {\n    hello: func() -> string;\n}\n'),
+    "Smithy": ("smithy/hello.smithy",
+        '$version: "2"\nnamespace example\n\nstructure Greeting {\n    text: String\n}\n'),
+    "Turtle (RDF)": ("turtle/hello.ttl",
+        '@prefix ex: <http://example.org/> .\nex:greeting "Hello, World!" .\n'),
+    "JSON-LD": ("jsonld/hello.jsonld",
+        '{\n  "@context": {},\n  "greeting": "Hello, World!"\n}\n'),
+    "GeoJSON": ("geojson/hello.geojson",
+        '{\n  "type": "Feature",\n  "properties": { "greeting": "Hello, World!" },\n  "geometry": null\n}\n'),
+}
+
+PROGRAMS.update(EXTRA5_PROGRAMS)
+MARKUP.update(EXTRA5_MARKUP)
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}

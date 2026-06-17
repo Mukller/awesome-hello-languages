@@ -1,0 +1,5 @@
+{
+  "type": "Feature",
+  "properties": { "greeting": "Hello, World!" },
+  "geometry": null
+}
