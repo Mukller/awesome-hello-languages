@@ -555,6 +555,116 @@ def _whitespace(text: str) -> str:
 
 PROGRAMS["Whitespace"] = ("whitespace/hello.ws", _whitespace("Hello, World!\n"))
 
+# ---------------------------------------------------------------------------
+# Fifth wave: web/template engines, engine scripting, music, proof/logic,
+# retro BASICs, more shells, and data schemas.
+# ---------------------------------------------------------------------------
+EXTRA4_PROGRAMS: dict[str, tuple[str, str]] = {
+    # --- Automation / scripting ---
+    "Expect": ("expect/hello.exp", 'send_user "Hello, World!\\n"\n'),
+    "HyperTalk": ("hypertalk/hello.ht", 'put "Hello, World!"\n'),
+    "NSIS": ("nsis/hello.nsi",
+        'OutFile "hello.exe"\nSection\n  MessageBox MB_OK "Hello, World!"\nSectionEnd\n'),
+    # --- Shells ---
+    "OSH (Oils)": ("osh/hello.osh", 'echo "Hello, World!"\n'),
+    "Murex": ("murex/hello.mx", 'out "Hello, World!"\n'),
+    "Ion": ("ion/hello.ion", 'echo "Hello, World!"\n'),
+    "rc (Plan 9)": ("rc/hello.rc", 'echo Hello, World!\n'),
+    # --- Interactive fiction / education ---
+    "Ren'Py": ("renpy/hello.rpy", 'label start:\n    "Hello, World!"\n'),
+    "Inform 6": ("inform6/hello.inf", '[ Main; print "Hello, World!^"; ];\n'),
+    "NetLogo": ("netlogo/hello.nlogo",
+        'to hello\n  print "Hello, World!"\nend\n'),
+    # --- Game engine scripting ---
+    "UnrealScript": ("unrealscript/Hello.uc",
+        'class Hello extends Object;\n\nfunction Hello() {\n    `log("Hello, World!");\n}\n'),
+    "Papyrus": ("papyrus/Hello.psc",
+        'Scriptname Hello\n\nFunction Say()\n    Debug.Trace("Hello, World!")\nEndFunction\n'),
+    "QuakeC": ("quakec/hello.qc",
+        'void() main = {\n    print("Hello, World!\\n");\n};\n'),
+    # --- Music / creative coding ---
+    "ChucK": ("chuck/hello.ck", '<<< "Hello, World!" >>>;\n'),
+    "SuperCollider": ("supercollider/hello.scd", '"Hello, World!".postln;\n'),
+    "LilyPond": ("lilypond/hello.ly", '\\markup { "Hello, World!" }\n'),
+    # --- Proof / logic / constraints ---
+    "TLA+": ("tlaplus/hello.tla",
+        '---- MODULE hello ----\nEXTENDS TLC\nASSUME PrintT("Hello, World!")\n====\n'),
+    "Picat": ("picat/hello.pi", 'main => println("Hello, World!").\n'),
+    "MiniZinc": ("minizinc/hello.mzn", 'output ["Hello, World!"];\n'),
+    "SMT-LIB": ("smtlib/hello.smt2", '(echo "Hello, World!")\n'),
+    "ACL2": ("acl2/hello.lisp", '(cw "Hello, World!~%")\n'),
+    # --- Scientific / CAS ---
+    "Magma": ("magma/hello.magma", '"Hello, World!";\n'),
+    "Singular": ("singular/hello.sing", 'print("Hello, World!");\n'),
+    "A+": ("aplus/hello.a", "'Hello, World!'\n"),
+    # --- Enterprise / legacy ---
+    "Natural": ("natural/hello.nsp", "WRITE 'Hello, World!'\nEND\n"),
+    "Harbour": ("harbour/hello.prg", '? "Hello, World!"\n'),
+    "GNU Smalltalk": ("gnu-smalltalk/hello.st", "'Hello, World!' displayNl.\n"),
+    "Dylan": ("dylan/hello.dylan", 'format-out("Hello, World!\\n");\n'),
+    "BeanShell": ("beanshell/hello.bsh", 'print("Hello, World!");\n'),
+    "Ioke": ("ioke/hello.ik", '"Hello, World!" println\n'),
+    "X10": ("x10/Hello.x10",
+        'public class Hello {\n  public static def main(args: Rail[String]) {\n    Console.OUT.println("Hello, World!");\n  }\n}\n'),
+    # --- Retro BASIC family ---
+    "GW-BASIC": ("gwbasic/hello.bas", '10 PRINT "Hello, World!"\n'),
+    "BBC BASIC": ("bbcbasic/hello.bbc", 'PRINT "Hello, World!"\n'),
+    "PureBasic": ("purebasic/hello.pb",
+        'OpenConsole()\nPrintN("Hello, World!")\n'),
+    "Gambas": ("gambas/hello.module",
+        'Public Sub Main()\n  Print "Hello, World!"\nEnd\n'),
+    # --- Modern web-ish ---
+    "Mint": ("mint/hello.mint",
+        'component Main {\n  fun render : String {\n    "Hello, World!"\n  }\n}\n'),
+    "Imba": ("imba/hello.imba", 'console.log "Hello, World!"\n'),
+    "Civet": ("civet/hello.civet", 'console.log "Hello, World!"\n'),
+}
+
+EXTRA4_MARKUP: dict[str, tuple[str, str]] = {
+    # --- Component / template engines ---
+    "Svelte": ("svelte/Hello.svelte", '<p>Hello, World!</p>\n'),
+    "Vue": ("vue/Hello.vue",
+        '<template>\n  <p>Hello, World!</p>\n</template>\n'),
+    "JSX": ("jsx/hello.jsx", 'const App = () => <p>Hello, World!</p>;\n'),
+    "Astro": ("astro/hello.astro", '<p>Hello, World!</p>\n'),
+    "Marko": ("marko/hello.marko", '<p>Hello, World!</p>\n'),
+    "Razor": ("razor/hello.cshtml", '<p>@("Hello, World!")</p>\n'),
+    "Blade": ("blade/hello.blade.php", '{{ "Hello, World!" }}\n'),
+    "JSP": ("jsp/hello.jsp", '<%= "Hello, World!" %>\n'),
+    "ASP (classic)": ("asp/hello.asp", '<%= "Hello, World!" %>\n'),
+    "Velocity": ("velocity/hello.vm", '#set($g = "Hello, World!")$g\n'),
+    "FreeMarker": ("freemarker/hello.ftl", '${"Hello, World!"}\n'),
+    "Smarty": ("smarty/hello.tpl", '{"Hello, World!"}\n'),
+    "Nunjucks": ("nunjucks/hello.njk", '{{ "Hello, World!" }}\n'),
+    # --- Data / schema ---
+    "JSON5": ("json5/hello.json5", '{ greeting: "Hello, World!" }\n'),
+    "JSONC": ("jsonc/hello.jsonc",
+        '{\n  // greeting\n  "greeting": "Hello, World!"\n}\n'),
+    "NestedText": ("nestedtext/hello.nt", 'greeting: Hello, World!\n'),
+    "SDLang": ("sdlang/hello.sdl", 'greeting "Hello, World!"\n'),
+    "ASN.1": ("asn1/hello.asn1",
+        'Greeting ::= SEQUENCE {\n  text UTF8String\n}\n'),
+    "RAML": ("raml/hello.raml", '#%RAML 1.0\ntitle: Hello, World!\n'),
+    "OpenAPI": ("openapi/hello.yaml",
+        'openapi: 3.0.0\ninfo:\n  title: "Hello, World!"\n  version: "1.0"\npaths: {}\n'),
+    "JSON Schema": ("jsonschema/hello.json",
+        '{\n  "title": "Hello, World!",\n  "type": "string"\n}\n'),
+    "XSD": ("xsd/hello.xsd",
+        '<?xml version="1.0"?>\n<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">\n  <xs:element name="greeting" type="xs:string"/>\n</xs:schema>\n'),
+}
+
+PROGRAMS.update(EXTRA4_PROGRAMS)
+MARKUP.update(EXTRA4_MARKUP)
+
+# Alphuck: a 1:1 letter substitution of Brainfuck — derive it for correctness.
+_BF_TO_ALPHUCK = {
+    ">": "a", "<": "c", "+": "e", "-": "i", ".": "j", ",": "o", "[": "p", "]": "s",
+}
+PROGRAMS["Alphuck"] = (
+    "alphuck/hello.alph",
+    "".join(_BF_TO_ALPHUCK[c] for c in _bf_source if c in _BF_TO_ALPHUCK) + "\n",
+)
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}

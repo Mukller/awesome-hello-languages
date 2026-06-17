@@ -1,0 +1,2 @@
+label start:
+    "Hello, World!"

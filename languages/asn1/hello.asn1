@@ -1,0 +1,3 @@
+Greeting ::= SEQUENCE {
+  text UTF8String
+}
