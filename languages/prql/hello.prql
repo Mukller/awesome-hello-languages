@@ -1,0 +1,1 @@
+from [{ greeting = "Hello, World!" }]

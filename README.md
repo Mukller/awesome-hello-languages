@@ -1,6 +1,6 @@
 # Awesome Hello Languages [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> One repository. One greeting. 432 programming languages and data formats.
+> One repository. One greeting. 474 programming languages and data formats.
 
 A curated, runnable collection of **"Hello, World!"** — the same line printed in
 as many different languages as possible. Compiled, interpreted, functional,
@@ -24,9 +24,9 @@ greeting appears in a new tongue.
 
 | Metric | Count |
 | --- | --- |
-| Programming languages | 333 |
-| Markup / data / build formats | 99 |
-| **Total greetings** | **432** |
+| Programming languages | 361 |
+| Markup / data / build formats | 113 |
+| **Total greetings** | **474** |
 
 ## Programming languages
 
@@ -40,6 +40,7 @@ greeting appears in a new tongue.
 | Ada | [`ada/hello.adb`](languages/ada/hello.adb) |
 | Algol 68 | [`algol68/hello.a68`](languages/algol68/hello.a68) |
 | Alphuck | [`alphuck/hello.alph`](languages/alphuck/hello.alph) |
+| AmigaE | [`amigae/hello.e`](languages/amigae/hello.e) |
 | AngelScript | [`angelscript/hello.as`](languages/angelscript/hello.as) |
 | Apex | [`apex/Hello.cls`](languages/apex/Hello.cls) |
 | APL | [`apl/hello.apl`](languages/apl/hello.apl) |
@@ -65,6 +66,9 @@ greeting appears in a new tongue.
 | Beef | [`beef/hello.bf`](languages/beef/hello.bf) |
 | Befunge | [`befunge/hello.bf`](languages/befunge/hello.bf) |
 | Bicep | [`bicep/hello.bicep`](languages/bicep/hello.bicep) |
+| BlitzBasic | [`blitzbasic/hello.bb`](languages/blitzbasic/hello.bb) |
+| BlitzMax | [`blitzmax/hello.bmx`](languages/blitzmax/hello.bmx) |
+| Blub | [`blub/hello.blub`](languages/blub/hello.blub) |
 | Bluespec | [`bluespec/Hello.bsv`](languages/bluespec/Hello.bsv) |
 | Boo | [`boo/hello.boo`](languages/boo/hello.boo) |
 | BQN | [`bqn/hello.bqn`](languages/bqn/hello.bqn) |
@@ -100,11 +104,13 @@ greeting appears in a new tongue.
 | Csound | [`csound/hello.csd`](languages/csound/hello.csd) |
 | CUDA | [`cuda/hello.cu`](languages/cuda/hello.cu) |
 | Curry | [`curry/hello.curry`](languages/curry/hello.curry) |
+| Curv | [`curv/hello.curv`](languages/curv/hello.curv) |
 | Cyber | [`cyber/hello.cy`](languages/cyber/hello.cy) |
 | Cypher | [`cypher/hello.cypher`](languages/cypher/hello.cypher) |
 | Cython | [`cython/hello.pyx`](languages/cython/hello.pyx) |
 | D | [`d/hello.d`](languages/d/hello.d) |
 | Dafny | [`dafny/hello.dfy`](languages/dafny/hello.dfy) |
+| DarkBASIC | [`darkbasic/hello.dba`](languages/darkbasic/hello.dba) |
 | Dart | [`dart/hello.dart`](languages/dart/hello.dart) |
 | Dash | [`dash/hello.sh`](languages/dash/hello.sh) |
 | Datalog | [`datalog/hello.dl`](languages/datalog/hello.dl) |
@@ -140,9 +146,11 @@ greeting appears in a new tongue.
 | Frege | [`frege/Hello.fr`](languages/frege/Hello.fr) |
 | Frink | [`frink/hello.frink`](languages/frink/hello.frink) |
 | Gambas | [`gambas/hello.module`](languages/gambas/hello.module) |
+| GameMonkey | [`gamemonkey/hello.gm`](languages/gamemonkey/hello.gm) |
 | GAP | [`gap/hello.g`](languages/gap/hello.g) |
 | GDScript | [`gdscript/hello.gd`](languages/gdscript/hello.gd) |
 | Genie | [`genie/hello.gs`](languages/genie/hello.gs) |
+| Gentee | [`gentee/hello.g`](languages/gentee/hello.g) |
 | Gleam | [`gleam/hello.gleam`](languages/gleam/hello.gleam) |
 | GLSL | [`glsl/hello.frag`](languages/glsl/hello.frag) |
 | GML | [`gml/hello.gml`](languages/gml/hello.gml) |
@@ -150,6 +158,7 @@ greeting appears in a new tongue.
 | Gnuplot | [`gnuplot/hello.gp`](languages/gnuplot/hello.gp) |
 | Go | [`go/hello.go`](languages/go/hello.go) |
 | GolfScript | [`golfscript/hello.gs`](languages/golfscript/hello.gs) |
+| Golo | [`golo/hello.golo`](languages/golo/hello.golo) |
 | Gosu | [`gosu/hello.gsp`](languages/gosu/hello.gsp) |
 | Grain | [`grain/hello.gr`](languages/grain/hello.gr) |
 | Gravity | [`gravity/hello.gravity`](languages/gravity/hello.gravity) |
@@ -158,6 +167,7 @@ greeting appears in a new tongue.
 | Guile | [`guile/hello.scm`](languages/guile/hello.scm) |
 | GW-BASIC | [`gwbasic/hello.bas`](languages/gwbasic/hello.bas) |
 | Hack | [`hack/hello.hack`](languages/hack/hello.hack) |
+| Hamler | [`hamler/hello.hm`](languages/hamler/hello.hm) |
 | Harbour | [`harbour/hello.prg`](languages/harbour/hello.prg) |
 | Hare | [`hare/hello.ha`](languages/hare/hello.ha) |
 | Haskell | [`haskell/hello.hs`](languages/haskell/hello.hs) |
@@ -183,11 +193,13 @@ greeting appears in a new tongue.
 | Janet | [`janet/hello.janet`](languages/janet/hello.janet) |
 | Java | [`java/Hello.java`](languages/java/Hello.java) |
 | JavaScript | [`javascript/hello.js`](languages/javascript/hello.js) |
+| Jenkinsfile | [`jenkins/Jenkinsfile`](languages/jenkins/Jenkinsfile) |
 | Joy | [`joy/hello.joy`](languages/joy/hello.joy) |
 | jq | [`jq/hello.jq`](languages/jq/hello.jq) |
 | Julia | [`julia/hello.jl`](languages/julia/hello.jl) |
 | Just | [`just/justfile`](languages/just/justfile) |
 | K | [`k/hello.k`](languages/k/hello.k) |
+| Kitten | [`kitten/hello.ktn`](languages/kitten/hello.ktn) |
 | Klong | [`klong/hello.kg`](languages/klong/hello.kg) |
 | Koka | [`koka/hello.kk`](languages/koka/hello.kk) |
 | Kotlin | [`kotlin/hello.kt`](languages/kotlin/hello.kt) |
@@ -196,9 +208,11 @@ greeting appears in a new tongue.
 | LFE | [`lfe/hello.lfe`](languages/lfe/hello.lfe) |
 | Liberty BASIC | [`libertybasic/hello.bas`](languages/libertybasic/hello.bas) |
 | LilyPond | [`lilypond/hello.ly`](languages/lilypond/hello.ly) |
+| Links | [`links/hello.links`](languages/links/hello.links) |
 | LLVM IR | [`llvm-ir/hello.ll`](languages/llvm-ir/hello.ll) |
 | Lobster | [`lobster/hello.lobster`](languages/lobster/hello.lobster) |
 | Logo | [`logo/hello.logo`](languages/logo/hello.logo) |
+| Logtalk | [`logtalk/hello.lgt`](languages/logtalk/hello.lgt) |
 | LOLCODE | [`lolcode/hello.lol`](languages/lolcode/hello.lol) |
 | Lua | [`lua/hello.lua`](languages/lua/hello.lua) |
 | Luau | [`luau/hello.luau`](languages/luau/hello.luau) |
@@ -213,12 +227,15 @@ greeting appears in a new tongue.
 | Mercury | [`mercury/hello.m`](languages/mercury/hello.m) |
 | Meson | [`meson/meson.build`](languages/meson/meson.build) |
 | Metal | [`metal/hello.metal`](languages/metal/hello.metal) |
+| Min | [`min/hello.min`](languages/min/hello.min) |
 | MiniZinc | [`minizinc/hello.mzn`](languages/minizinc/hello.mzn) |
 | Mint | [`mint/hello.mint`](languages/mint/hello.mint) |
 | MIPS Assembly | [`mips-asm/hello.s`](languages/mips-asm/hello.s) |
+| Modelica | [`modelica/Hello.mo`](languages/modelica/Hello.mo) |
 | Modula-2 | [`modula2/hello.mod`](languages/modula2/hello.mod) |
 | Modula-3 | [`modula3/Hello.m3`](languages/modula3/Hello.m3) |
 | Mojo | [`mojo/hello.mojo`](languages/mojo/hello.mojo) |
+| Monkey2 | [`monkey2/hello.monkey2`](languages/monkey2/hello.monkey2) |
 | MoonScript | [`moonscript/hello.moon`](languages/moonscript/hello.moon) |
 | Move | [`move/hello.move`](languages/move/hello.move) |
 | MUMPS | [`mumps/hello.mumps`](languages/mumps/hello.mumps) |
@@ -268,17 +285,22 @@ greeting appears in a new tongue.
 | PowerShell | [`powershell/hello.ps1`](languages/powershell/hello.ps1) |
 | Processing | [`processing/hello.pde`](languages/processing/hello.pde) |
 | Prolog | [`prolog/hello.pl`](languages/prolog/hello.pl) |
+| PRQL | [`prql/hello.prql`](languages/prql/hello.prql) |
 | Puppet | [`puppet/hello.pp`](languages/puppet/hello.pp) |
+| Pure | [`pure/hello.pure`](languages/pure/hello.pure) |
 | PureBasic | [`purebasic/hello.pb`](languages/purebasic/hello.pb) |
 | PureScript | [`purescript/Hello.purs`](languages/purescript/Hello.purs) |
 | Pyret | [`pyret/hello.arr`](languages/pyret/hello.arr) |
 | Python | [`python/hello.py`](languages/python/hello.py) |
 | Q (kdb+) | [`q/hello.q`](languages/q/hello.q) |
+| Q# | [`qsharp/Hello.qs`](languages/qsharp/Hello.qs) |
 | QBasic | [`qbasic/hello.bas`](languages/qbasic/hello.bas) |
 | QML | [`qml/hello.qml`](languages/qml/hello.qml) |
 | QuakeC | [`quakec/hello.qc`](languages/quakec/hello.qc) |
+| Quorum | [`quorum/hello.quorum`](languages/quorum/hello.quorum) |
 | R | [`r/hello.R`](languages/r/hello.R) |
 | Racket | [`racket/hello.rkt`](languages/racket/hello.rkt) |
+| Rake | [`rake/Rakefile`](languages/rake/Rakefile) |
 | Raku | [`raku/hello.raku`](languages/raku/hello.raku) |
 | rc (Plan 9) | [`rc/hello.rc`](languages/rc/hello.rc) |
 | Reason | [`reason/hello.re`](languages/reason/hello.re) |
@@ -296,6 +318,7 @@ greeting appears in a new tongue.
 | RPG | [`rpg/hello.rpgle`](languages/rpg/hello.rpgle) |
 | Ruby | [`ruby/hello.rb`](languages/ruby/hello.rb) |
 | Rust | [`rust/hello.rs`](languages/rust/hello.rs) |
+| Rye | [`rye/hello.rye`](languages/rye/hello.rye) |
 | Sage | [`sage/hello.sage`](languages/sage/hello.sage) |
 | SAS | [`sas/hello.sas`](languages/sas/hello.sas) |
 | Scala | [`scala/hello.scala`](languages/scala/hello.scala) |
@@ -328,12 +351,14 @@ greeting appears in a new tongue.
 | T-SQL | [`tsql/hello.sql`](languages/tsql/hello.sql) |
 | Tcl | [`tcl/hello.tcl`](languages/tcl/hello.tcl) |
 | Tcsh | [`tcsh/hello.tcsh`](languages/tcsh/hello.tcsh) |
+| Teal | [`teal/hello.tl`](languages/teal/hello.tl) |
 | Terra | [`terra/hello.t`](languages/terra/hello.t) |
 | Terraform | [`terraform/hello.tf`](languages/terraform/hello.tf) |
 | TLA+ | [`tlaplus/hello.tla`](languages/tlaplus/hello.tla) |
 | True BASIC | [`truebasic/hello.tru`](languages/truebasic/hello.tru) |
 | TypeScript | [`typescript/hello.ts`](languages/typescript/hello.ts) |
 | Uiua | [`uiua/hello.ua`](languages/uiua/hello.ua) |
+| Umka | [`umka/hello.um`](languages/umka/hello.um) |
 | Unicon | [`unicon/hello.ucn`](languages/unicon/hello.ucn) |
 | Unison | [`unison/hello.u`](languages/unison/hello.u) |
 | UnrealScript | [`unrealscript/Hello.uc`](languages/unrealscript/Hello.uc) |
@@ -350,6 +375,7 @@ greeting appears in a new tongue.
 | Vyper | [`vyper/hello.vy`](languages/vyper/hello.vy) |
 | WebAssembly (WAT) | [`wat/hello.wat`](languages/wat/hello.wat) |
 | WGSL | [`wgsl/hello.wgsl`](languages/wgsl/hello.wgsl) |
+| Whiley | [`whiley/hello.whiley`](languages/whiley/hello.whiley) |
 | Whitespace | [`whitespace/hello.ws`](languages/whitespace/hello.ws) |
 | Wolfram | [`wolfram/hello.wl`](languages/wolfram/hello.wl) |
 | Wren | [`wren/hello.wren`](languages/wren/hello.wren) |
@@ -361,7 +387,9 @@ greeting appears in a new tongue.
 | Xtend | [`xtend/Hello.xtend`](languages/xtend/Hello.xtend) |
 | Yabasic | [`yabasic/hello.yab`](languages/yabasic/hello.yab) |
 | Yacas | [`yacas/hello.ys`](languages/yacas/hello.ys) |
+| Yeti | [`yeti/hello.yeti`](languages/yeti/hello.yeti) |
 | Yorick | [`yorick/hello.i`](languages/yorick/hello.i) |
+| Yuescript | [`yuescript/hello.yue`](languages/yuescript/hello.yue) |
 | Z80 (CP/M) | [`z80-cpm/hello.asm`](languages/z80-cpm/hello.asm) |
 | Zig | [`zig/hello.zig`](languages/zig/hello.zig) |
 | Zsh | [`zsh/hello.zsh`](languages/zsh/hello.zsh) |
@@ -377,16 +405,20 @@ greeting appears in a new tongue.
 | ASP (classic) | [`asp/hello.asp`](languages/asp/hello.asp) |
 | Astro | [`astro/hello.astro`](languages/astro/hello.astro) |
 | Avro | [`avro/hello.avsc`](languages/avro/hello.avsc) |
+| BBCode | [`bbcode/hello.bbcode`](languages/bbcode/hello.bbcode) |
 | BibTeX | [`bibtex/hello.bib`](languages/bibtex/hello.bib) |
 | Blade | [`blade/hello.blade.php`](languages/blade/hello.blade.php) |
 | Cap'n Proto | [`capnproto/hello.capnp`](languages/capnproto/hello.capnp) |
+| Creole | [`creole/hello.creole`](languages/creole/hello.creole) |
 | CSON | [`cson/hello.cson`](languages/cson/hello.cson) |
 | CSS | [`css/hello.css`](languages/css/hello.css) |
 | CSV | [`csv/hello.csv`](languages/csv/hello.csv) |
 | CUE | [`cue/hello.cue`](languages/cue/hello.cue) |
+| Desktop Entry | [`desktop/hello.desktop`](languages/desktop/hello.desktop) |
 | Dhall | [`dhall/hello.dhall`](languages/dhall/hello.dhall) |
 | Djot | [`djot/hello.dj`](languages/djot/hello.dj) |
 | DocBook | [`docbook/hello.dbk`](languages/docbook/hello.dbk) |
+| Docker Compose | [`docker-compose/docker-compose.yml`](languages/docker-compose/docker-compose.yml) |
 | dotenv | [`dotenv/hello.env`](languages/dotenv/hello.env) |
 | Earthfile | [`earthfile/Earthfile`](languages/earthfile/Earthfile) |
 | EDN | [`edn/hello.edn`](languages/edn/hello.edn) |
@@ -397,6 +429,8 @@ greeting appears in a new tongue.
 | Gemtext | [`gemtext/hello.gmi`](languages/gemtext/hello.gmi) |
 | GeoJSON | [`geojson/hello.geojson`](languages/geojson/hello.geojson) |
 | GitHub Actions | [`githubactions/hello.yml`](languages/githubactions/hello.yml) |
+| GitLab CI | [`gitlab-ci/gitlab-ci.yml`](languages/gitlab-ci/gitlab-ci.yml) |
+| Go template | [`gotemplate/hello.tmpl`](languages/gotemplate/hello.tmpl) |
 | Gradle | [`gradle/build.gradle`](languages/gradle/build.gradle) |
 | GraphQL | [`graphql/hello.graphql`](languages/graphql/hello.graphql) |
 | Graphviz DOT | [`dot/hello.dot`](languages/dot/hello.dot) |
@@ -418,10 +452,12 @@ greeting appears in a new tongue.
 | JSP | [`jsp/hello.jsp`](languages/jsp/hello.jsp) |
 | JSX | [`jsx/hello.jsx`](languages/jsx/hello.jsx) |
 | KDL | [`kdl/hello.kdl`](languages/kdl/hello.kdl) |
+| Kubernetes | [`kubernetes/hello.yaml`](languages/kubernetes/hello.yaml) |
 | LaTeX | [`latex/hello.tex`](languages/latex/hello.tex) |
 | Less | [`less/hello.less`](languages/less/hello.less) |
 | Liquid | [`liquid/hello.liquid`](languages/liquid/hello.liquid) |
 | Makefile | [`makefile/Makefile`](languages/makefile/Makefile) |
+| Mako | [`mako/hello.mako`](languages/mako/hello.mako) |
 | Markdown | [`markdown/hello.md`](languages/markdown/hello.md) |
 | Marko | [`marko/hello.marko`](languages/marko/hello.marko) |
 | MDX | [`mdx/hello.mdx`](languages/mdx/hello.mdx) |
@@ -438,12 +474,15 @@ greeting appears in a new tongue.
 | Pkl | [`pkl/hello.pkl`](languages/pkl/hello.pkl) |
 | PlantUML | [`plantuml/hello.puml`](languages/plantuml/hello.puml) |
 | POD | [`pod/hello.pod`](languages/pod/hello.pod) |
+| Property List | [`plist/hello.plist`](languages/plist/hello.plist) |
 | Protocol Buffers | [`protobuf/hello.proto`](languages/protobuf/hello.proto) |
 | Pug | [`pug/hello.pug`](languages/pug/hello.pug) |
 | RAML | [`raml/hello.raml`](languages/raml/hello.raml) |
 | Razor | [`razor/hello.cshtml`](languages/razor/hello.cshtml) |
 | reStructuredText | [`rst/hello.rst`](languages/rst/hello.rst) |
 | RON | [`ron/hello.ron`](languages/ron/hello.ron) |
+| RTF | [`rtf/hello.rtf`](languages/rtf/hello.rtf) |
+| SaltStack | [`saltstack/hello.sls`](languages/saltstack/hello.sls) |
 | SCSS | [`scss/hello.scss`](languages/scss/hello.scss) |
 | SDLang | [`sdlang/hello.sdl`](languages/sdlang/hello.sdl) |
 | Slim | [`slim/hello.slim`](languages/slim/hello.slim) |
@@ -452,8 +491,10 @@ greeting appears in a new tongue.
 | Stylus | [`stylus/hello.styl`](languages/stylus/hello.styl) |
 | Svelte | [`svelte/Hello.svelte`](languages/svelte/Hello.svelte) |
 | SVG | [`svg/hello.svg`](languages/svg/hello.svg) |
+| Taskfile | [`taskfile/Taskfile.yml`](languages/taskfile/Taskfile.yml) |
 | Texinfo | [`texinfo/hello.texi`](languages/texinfo/hello.texi) |
 | Textile | [`textile/hello.textile`](languages/textile/hello.textile) |
+| TextProto | [`textproto/hello.textproto`](languages/textproto/hello.textproto) |
 | Thymeleaf | [`thymeleaf/hello.html`](languages/thymeleaf/hello.html) |
 | TOML | [`toml/hello.toml`](languages/toml/hello.toml) |
 | Troff | [`troff/hello.tr`](languages/troff/hello.tr) |
@@ -464,6 +505,7 @@ greeting appears in a new tongue.
 | vCard | [`vcard/hello.vcf`](languages/vcard/hello.vcf) |
 | Velocity | [`velocity/hello.vm`](languages/velocity/hello.vm) |
 | Vue | [`vue/Hello.vue`](languages/vue/Hello.vue) |
+| Windows Registry | [`registry/hello.reg`](languages/registry/hello.reg) |
 | WIT | [`wit/hello.wit`](languages/wit/hello.wit) |
 | XAML | [`xaml/hello.xaml`](languages/xaml/hello.xaml) |
 | XML | [`xml/hello.xml`](languages/xml/hello.xml) |

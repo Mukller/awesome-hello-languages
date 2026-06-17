@@ -759,6 +759,100 @@ EXTRA5_MARKUP: dict[str, tuple[str, str]] = {
 PROGRAMS.update(EXTRA5_PROGRAMS)
 MARKUP.update(EXTRA5_MARKUP)
 
+# ---------------------------------------------------------------------------
+# Seventh wave: more real languages/dialects + infra config formats.
+# ---------------------------------------------------------------------------
+EXTRA6_PROGRAMS: dict[str, tuple[str, str]] = {
+    # --- General-purpose / scripting ---
+    "GameMonkey": ("gamemonkey/hello.gm", 'print("Hello, World!");\n'),
+    "Rye": ("rye/hello.rye", 'print "Hello, World!"\n'),
+    "Umka": ("umka/hello.um",
+        'fn main() {\n    printf("Hello, World!\\n")\n}\n'),
+    "Pure": ("pure/hello.pure", 'using system;\nputs "Hello, World!";\n'),
+    "Curv": ("curv/hello.curv", 'print "Hello, World!"\n'),
+    # --- Concatenative ---
+    "Min": ("min/hello.min", '"Hello, World!" puts\n'),
+    "Kitten": ("kitten/hello.ktn", '"Hello, World!" say\n'),
+    # --- JVM ---
+    "Golo": ("golo/hello.golo",
+        'module hello\n\nfunction main = |args| {\n  println("Hello, World!")\n}\n'),
+    "Yeti": ("yeti/hello.yeti", 'println "Hello, World!"\n'),
+    "Whiley": ("whiley/hello.whiley",
+        'import std::io\n\npublic method main():\n    io::println("Hello, World!")\n'),
+    "Quorum": ("quorum/hello.quorum", 'output "Hello, World!"\n'),
+    "Gentee": ("gentee/hello.g", 'func main {\n  print("Hello, World!")\n}\n'),
+    # --- Functional ---
+    "Links": ("links/hello.links", 'print("Hello, World!")\n'),
+    "Hamler": ("hamler/hello.hm",
+        'module Main where\n\nmain = println "Hello, World!"\n'),
+    # --- Logic ---
+    "Logtalk": ("logtalk/hello.lgt",
+        ":- object(hello).\n\n    :- public(say/0).\n    say :- write('Hello, World!'), nl.\n\n:- end_object.\n"),
+    # --- Scientific / query / quantum ---
+    "Modelica": ("modelica/Hello.mo",
+        'model Hello\nalgorithm\n  Modelica.Utilities.Streams.print("Hello, World!");\nend Hello;\n'),
+    "PRQL": ("prql/hello.prql", 'from [{ greeting = "Hello, World!" }]\n'),
+    "Q#": ("qsharp/Hello.qs",
+        'namespace Hello {\n    @EntryPoint()\n    operation Main() : Unit {\n        Message("Hello, World!");\n    }\n}\n'),
+    # --- Build DSLs ---
+    "Rake": ("rake/Rakefile", 'task :hello do\n  puts "Hello, World!"\nend\n'),
+    "Jenkinsfile": ("jenkins/Jenkinsfile",
+        'pipeline {\n    agent any\n    stages {\n        stage("Hello") {\n            steps {\n                echo "Hello, World!"\n            }\n        }\n    }\n}\n'),
+    # --- Lua family ---
+    "Yuescript": ("yuescript/hello.yue", 'print "Hello, World!"\n'),
+    "Teal": ("teal/hello.tl", 'print("Hello, World!")\n'),
+    # --- Game / retro BASIC-likes ---
+    "Monkey2": ("monkey2/hello.monkey2",
+        'Function Main()\n\tPrint "Hello, World!"\nEnd\n'),
+    "BlitzMax": ("blitzmax/hello.bmx", 'Print "Hello, World!"\n'),
+    "BlitzBasic": ("blitzbasic/hello.bb", 'Print "Hello, World!"\n'),
+    "AmigaE": ("amigae/hello.e",
+        "PROC main()\n  WriteF('Hello, World!\\n')\nENDPROC\n"),
+    "DarkBASIC": ("darkbasic/hello.dba", 'print "Hello, World!"\n'),
+}
+
+EXTRA6_MARKUP: dict[str, tuple[str, str]] = {
+    # --- Templating ---
+    "Go template": ("gotemplate/hello.tmpl", '{{ "Hello, World!" }}\n'),
+    "Mako": ("mako/hello.mako", '${"Hello, World!"}\n'),
+    # --- Document markup ---
+    "Creole": ("creole/hello.creole", '= Hello, World!\n'),
+    "BBCode": ("bbcode/hello.bbcode", '[b]Hello, World![/b]\n'),
+    "RTF": ("rtf/hello.rtf", '{\\rtf1 Hello, World!}\n'),
+    # --- Data / config ---
+    "TextProto": ("textproto/hello.textproto", 'greeting: "Hello, World!"\n'),
+    "Property List": ("plist/hello.plist",
+        '<?xml version="1.0"?>\n<plist version="1.0">\n  <string>Hello, World!</string>\n</plist>\n'),
+    "Windows Registry": ("registry/hello.reg",
+        'Windows Registry Editor Version 5.00\n\n[HKEY_CURRENT_USER\\Hello]\n"Greeting"="Hello, World!"\n'),
+    "Desktop Entry": ("desktop/hello.desktop",
+        '[Desktop Entry]\nName=Hello, World!\nType=Application\n'),
+    # --- Infra / CI ---
+    "Docker Compose": ("docker-compose/docker-compose.yml",
+        'services:\n  hello:\n    image: alpine\n    command: echo "Hello, World!"\n'),
+    "Kubernetes": ("kubernetes/hello.yaml",
+        'apiVersion: v1\nkind: Pod\nmetadata:\n  name: hello\nspec:\n  containers:\n    - name: hello\n      image: alpine\n      command: ["echo", "Hello, World!"]\n'),
+    "GitLab CI": ("gitlab-ci/gitlab-ci.yml",
+        'hello:\n  script:\n    - echo "Hello, World!"\n'),
+    "Taskfile": ("taskfile/Taskfile.yml",
+        'version: "3"\ntasks:\n  hello:\n    cmds:\n      - echo "Hello, World!"\n'),
+    "SaltStack": ("saltstack/hello.sls",
+        'hello:\n  cmd.run:\n    - name: echo "Hello, World!"\n'),
+}
+
+PROGRAMS.update(EXTRA6_PROGRAMS)
+MARKUP.update(EXTRA6_MARKUP)
+
+# Blub: a documented Ook!-style 1:1 Brainfuck transliteration — derive it.
+_BF_TO_BLUB = {
+    ">": "Blub. Blub?", "<": "Blub? Blub.", "+": "Blub. Blub.", "-": "Blub! Blub!",
+    ".": "Blub! Blub.", ",": "Blub. Blub!", "[": "Blub! Blub?", "]": "Blub? Blub!",
+}
+PROGRAMS["Blub"] = (
+    "blub/hello.blub",
+    " ".join(_BF_TO_BLUB[c] for c in _bf_source if c in _BF_TO_BLUB) + "\n",
+)
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}
