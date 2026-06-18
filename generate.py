@@ -919,6 +919,55 @@ def _unlambda(text: str) -> str:
 
 PROGRAMS["Unlambda"] = ("unlambda/hello.unl", _unlambda("Hello, World!"))
 
+# ---------------------------------------------------------------------------
+# Ninth wave: Rust-ecosystem scripting, econometrics, shading, teaching
+# languages, AT&T assembly, plus UI/doc formats.
+# ---------------------------------------------------------------------------
+EXTRA8_PROGRAMS: dict[str, tuple[str, str]] = {
+    # --- Rust-ecosystem embeddable scripting ---
+    "Rune": ("rune/hello.rn",
+        'pub fn main() {\n    println!("Hello, World!");\n}\n'),
+    "Dyon": ("dyon/hello.dyon",
+        'fn main() {\n    println("Hello, World!")\n}\n'),
+    "Rhai": ("rhai/hello.rhai", 'print("Hello, World!");\n'),
+    "Gluon": ("gluon/hello.glu",
+        'let io = import! std.io\nio.println "Hello, World!"\n'),
+    "Koto": ("koto/hello.koto", 'print "Hello, World!"\n'),
+    # --- Other scripting ---
+    "Lily": ("lily/hello.lily", 'print("Hello, World!")\n'),
+    "Amber": ("amber/hello.ab", 'echo "Hello, World!"\n'),
+    "Joker": ("joker/hello.joke", '(println "Hello, World!")\n'),
+    "Brat": ("brat/hello.brat", 'p "Hello, World!"\n'),
+    # --- Teaching languages ---
+    "Lox": ("lox/hello.lox", 'print "Hello, World!";\n'),
+    "Monkey": ("monkey/hello.monkey", 'puts("Hello, World!")\n'),
+    # --- Econometrics / statistics ---
+    "Ox": ("ox/hello.ox",
+        '#include <oxstd.h>\nmain() {\n    print("Hello, World!\\n");\n}\n'),
+    "GAUSS": ("gauss/hello.gss", 'print "Hello, World!";\n'),
+    # --- Query ---
+    "AQL": ("aql/hello.aql", 'RETURN "Hello, World!"\n'),
+    # --- Shading (with printf) ---
+    "VEX": ("vex/hello.vfl", 'printf("Hello, World!\\n");\n'),
+    "OSL": ("osl/hello.osl",
+        'shader hello() {\n    // Hello, World!\n    printf("Hello, World!\\n");\n}\n'),
+    # --- Assembly (AT&T syntax) ---
+    "GAS x86 (AT&T)": ("gas-x86/hello.s",
+        '.global _start\n.section .data\nmsg: .ascii "Hello, World!\\n"\n.section .text\n_start:\n    movl $4, %eax\n    movl $1, %ebx\n    movl $msg, %ecx\n    movl $14, %edx\n    int $0x80\n    movl $1, %eax\n    xorl %ebx, %ebx\n    int $0x80\n'),
+}
+
+EXTRA8_MARKUP: dict[str, tuple[str, str]] = {
+    "GTK Blueprint": ("blueprint/hello.blp",
+        'using Gtk 4.0;\n\nLabel {\n  label: "Hello, World!";\n}\n'),
+    "UCL": ("ucl/hello.ucl", 'greeting = "Hello, World!";\n'),
+    "Scribble": ("scribble/hello.scrbl",
+        '#lang scribble/base\n\nHello, World!\n'),
+    "Plain TeX": ("plaintex/hello.tex", '\\message{Hello, World!}\n\\bye\n'),
+}
+
+PROGRAMS.update(EXTRA8_PROGRAMS)
+MARKUP.update(EXTRA8_MARKUP)
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}

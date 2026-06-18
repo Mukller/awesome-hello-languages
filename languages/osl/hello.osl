@@ -1,0 +1,4 @@
+shader hello() {
+    // Hello, World!
+    printf("Hello, World!\n");
+}
