@@ -853,6 +853,72 @@ PROGRAMS["Blub"] = (
     " ".join(_BF_TO_BLUB[c] for c in _bf_source if c in _BF_TO_BLUB) + "\n",
 )
 
+# ---------------------------------------------------------------------------
+# Eighth wave: more real languages, grammars, bytecode assemblers.
+# ---------------------------------------------------------------------------
+EXTRA7_PROGRAMS: dict[str, tuple[str, str]] = {
+    # --- Functional / verification ---
+    "F*": ("fstar/Hello.fst",
+        'module Hello\nopen FStar.IO\n\nlet main = print_string "Hello, World!\\n"\n'),
+    # --- JS family ---
+    "LiveScript": ("livescript/hello.ls", 'console.log "Hello, World!"\n'),
+    "AssemblyScript": ("assemblyscript/hello.ts", 'console.log("Hello, World!");\n'),
+    # --- JVM ---
+    "Mirah": ("mirah/hello.mirah", 'puts "Hello, World!"\n'),
+    # --- Scientific ---
+    "Nickle": ("nickle/hello.5c", 'printf("Hello, World!\\n");\n'),
+    "Genius": ("genius/hello.gel", 'print("Hello, World!")\n'),
+    # --- Game / narrative scripting ---
+    "TorqueScript": ("torquescript/hello.cs", 'echo("Hello, World!");\n'),
+    "Ink": ("ink/hello.ink", 'Hello, World!\n-> END\n'),
+    "Yarn Spinner": ("yarn/hello.yarn",
+        'title: Start\n---\nHello, World!\n===\n'),
+    "Twine (Twee)": ("twine/hello.tw", ':: Start\nHello, World!\n'),
+    # --- Smart contracts ---
+    "Sway": ("sway/hello.sw",
+        'script;\n\nfn main() {\n    log("Hello, World!");\n}\n'),
+    "Noir": ("noir/hello.nr",
+        'fn main() {\n    println("Hello, World!");\n}\n'),
+    # --- Legacy / robotics ---
+    "Informix 4GL": ("informix4gl/hello.4gl",
+        'MAIN\n  DISPLAY "Hello, World!"\nEND MAIN\n'),
+    "RAPID": ("rapid/hello.mod",
+        'MODULE Hello\n  PROC main()\n    TPWrite "Hello, World!";\n  ENDPROC\nENDMODULE\n'),
+    # --- BASIC family ---
+    "SmallBASIC": ("smallbasic/hello.bas", 'print "Hello, World!"\n'),
+    "Microsoft Small Basic": ("ms-smallbasic/hello.sb",
+        'TextWindow.WriteLine("Hello, World!")\n'),
+    # --- Bytecode assemblers ---
+    "Jasmin (JVM)": ("jasmin/Hello.j",
+        '.class public Hello\n.super java/lang/Object\n\n.method public static main([Ljava/lang/String;)V\n    .limit stack 2\n    getstatic java/lang/System/out Ljava/io/PrintStream;\n    ldc "Hello, World!"\n    invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V\n    return\n.end method\n'),
+    "CIL (.NET IL)": ("cil/hello.il",
+        '.assembly Hello {}\n.method static void Main() {\n    .entrypoint\n    ldstr "Hello, World!"\n    call void [mscorlib]System.Console::WriteLine(string)\n    ret\n}\n'),
+    # --- Lexer/parser generator (has C action) ---
+    "Flex": ("flex/hello.l", '%%\n.*  printf("Hello, World!\\n");\n%%\n'),
+}
+
+EXTRA7_MARKUP: dict[str, tuple[str, str]] = {
+    "S-expression": ("sexpr/hello.sexp", '(greeting "Hello, World!")\n'),
+    "Recfile": ("recfile/hello.rec", 'greeting: Hello, World!\n'),
+    "JSON Lines": ("jsonlines/hello.jsonl", '{"greeting": "Hello, World!"}\n'),
+    "EBNF": ("ebnf/hello.ebnf", 'greeting = "Hello, World!" ;\n'),
+    "ANTLR": ("antlr/Hello.g4", "grammar Hello;\ngreeting : 'Hello, World!' ;\n"),
+    "PEG": ("peg/hello.peg", 'greeting <- "Hello, World!"\n'),
+}
+
+PROGRAMS.update(EXTRA7_PROGRAMS)
+MARKUP.update(EXTRA7_MARKUP)
+
+# Unlambda: build a print program from the string. `.c` prints c and returns
+# its argument; a left-nested application chain prints each char in order,
+# `r` prints a newline, `i` terminates. Generated => guaranteed correct.
+def _unlambda(text: str) -> str:
+    tokens = ["." + c for c in text] + ["r", "i"]
+    return "`" * (len(tokens) - 1) + "".join(tokens) + "\n"
+
+
+PROGRAMS["Unlambda"] = ("unlambda/hello.unl", _unlambda("Hello, World!"))
+
 
 def main() -> None:
     all_programs = {**PROGRAMS, **MARKUP}
